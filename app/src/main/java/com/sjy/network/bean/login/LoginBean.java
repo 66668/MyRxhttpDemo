@@ -1,6 +1,6 @@
 package com.sjy.network.bean.login;
 
-import com.thinkernote.ThinkerNote.bean.CommonBean;
+import com.sjy.network.bean.CommonBean;
 
 import java.io.Serializable;
 
