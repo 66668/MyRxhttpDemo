@@ -2,13 +2,14 @@ package com.sjy.network.http;
 
 /**
  * URL 统一管理类
+ * 说明：登录+注册接口不添加token
  */
 
 public class URLUtils {
     //URL根目录
-//    public final static String API_BASE_URL = "https://app.efulai.cn";//内网测试
-//    public final static String API_BASE_URL = "https://app.efulai.cn";//外网测试
-    public final static String API_BASE_URL = "https://app.efulai.cn/";//正式
+//    public final static String API_BASE_URL = "http://new.qingbiji.cn:8088/";//内网测试
+    public final static String API_BASE_URL = "https://s.qingbiji.cn/";//外网测试
+//    public final static String API_BASE_URL = "http://new.qingbiji.cn/";//正式
 
     public final static String WEICHAT_BASE_URL = "https://api.weixin.qq.com";//微信登陆BaseURL
 
@@ -37,257 +38,210 @@ public class URLUtils {
      */
 
     /**
-     * 登录
+     * 登录相关(登录 注册 找回密码)
      */
-    public static final String LOGIN = "api/v1/login";
+    public static class Log {
+        /**
+         * 正常登录
+         */
+        public static final String LOGINNORMAL = "api/login";
+        /**
+         * 登录后的同步更新
+         */
+        public static final String PROFILE = "api/user/profile";
+
+        /**
+         * qq登录
+         */
+        public static final String LOGIN_THIRD = "api/login/third";
+
+        /**
+         * 手机验证码接口
+         */
+        public static final String PHONE_QUERFY_CODE = "api/verifycode";
+        /**
+         * 邮箱验证码接口
+         */
+        public static final String EMAIL_QUERFY_CODE = "api/verifycode/email";
+
+        /**
+         * 绑定手机
+         */
+        public static final String LOGIN_BIND = "api/login/bind";
+
+        /**
+         * 图片验证
+         */
+        public static final String VERIFY_PIC = "api/captcha";
+
+        /**
+         * 找回密码 提交
+         */
+        public static final String SUBMIT_FINDPS = "api/user/password/reset";
+
+        /**
+         * 注册 提交
+         */
+        public static final String SUBMIT_RESGIST = "api/register";
+
+        /**
+         * 修改手机号 提交
+         */
+        public static final String CHANGE_PHONE = "api/user/profile";
+
+        /**
+         * 修改手机号 提交
+         */
+        public static final String CHANGE_PS = "api/user/password";
+
+        /**
+         * 修改手机号 提交
+         */
+        public static final String CHANGE_NAME_OR_EMAIL = "api/user/profile";
+
+        /**
+         * 获取用户信息
+         */
+        public static final String USER_INFO = "api/user/profile";
+
+        /**
+         * logout
+         */
+        public static final String LOGOUT = "api/logout";
+
+    }
 
     public static class Home {
+        /**
+         * 检查更新
+         */
+        public static final String UPGRADE = "api/app/upgrade";
+
+        /**
+         * 下载路径 说明
+         */
+        @Deprecated
+        public static final String DOWNLOAD = "static/ThinkerNote-Setup.apk";
 
 
         /**
-         * banner
+         * 同步数据
          */
-        public static final String BANNER = "api/v1/banner";
+        public static final String SYNCHRONIZE = "api/app/upgrade";
+
 
         /**
-         * 搜索轮播
+         * 支付
          */
-        public static final String SEARCH_BANNER = "api/v1/keywords";
+        public static final String PAY_TIP = "api/margin/deposit";
 
         /**
-         * 文字轮播
+         * pic 上传 （feedback，等）
+         * https://s.qingbiji.cn/api/attachment?filename=IMG_20180525_132850.jpg&session_token=7E3ECyCspLM7NXPD6wRbBatBV9SKrX4q89fUxmwf
          */
-        public static final String TEXT_BANNER = "/api/v1/agency/enter";
-        /**
-         * 首页资讯
-         */
-        public static final String HOME_NEWS = "/api/v1/article/newest";
-
-        /**
-         * 首页tab
-         */
-        public static final String HOME_TAB = "/api/v1/nav";
-
-        /**
-         * 首页tab对应的数据
-         */
-        public static final String HOME_TAB_DATA = "/api/v1/agency";
-
-    }
-
-
-    /**
-     * ==========================================================================================
-     * ==========================================养老机构 筛选相关================================================
-     * ==========================================================================================
-     */
-    public static class InstitutionOrFilter {
-        /**
-         * 省市区单独接口
-         */
-        public static final String AREA = "/api/v1/get/area";
-
-        /**
-         * 机构筛选
-         */
-        public static final String FILTER = "/api/v1/screen/condition";
-        /**
-         * 机构列表
-         */
-        public static final String FILTER_LISTDATA = "/api/v1/agency/data";
-    }
-
-
-    /**
-     * ==========================================================================================
-     * ==========================================养老机构详情相关================================================
-     * ==========================================================================================
-     */
-    public static class InstitutionDetail {
-
-        /**
-         * banner图
-         */
-        public static final String DETAILBANNER = "/api/v1/agency/banner";
-
-        /**
-         * 机构详情
-         */
-        public static final String DETAIL = "/api/v1/agency/detail";
-
-        /**
-         * 评论列表
-         */
-        public static final String COMMENT_INSTITUTE_LIST = "/api/v1/agency/comment";
-
-        /**
-         * 发表评论
-         */
-        public static final String COMMENT_INSTITUTE_CREATE = "/api/v1/comment/agency";
-
-        /**
-         * 服务须知
-         */
-        public static final String SERVICENOTES = "/api/v1/service/instructions";
-
-        /**
-         * 资质机构
-         */
-        public static final String QUALIFICATION = "/api/v1/agency/qualify";
-        /**
-         * 收费标准
-         */
-        public static final String DETAIL_FEES = "/api/v1/price/detail";
-
-        /**
-         * 医养特色
-         */
-        public static final String DETAIL_CHARACTERISTIC = "/api/v1/agency/medical/";
-
-        /**
-         * 线路
-         */
-        public static final String DETAIL_TRAVALLINE = "/api/v1/agency/travel";
-
-        /**
-         * 预约参观 提交
-         */
-        public static final String DETAIL_APPOINTVISIT = "/api/v1/subscribe/visit";
-
-        /**
-         * 上门评估 提交
-         */
-        public static final String DETAIL_DOORASSESS = "/api/v1/subscribe/eval";
-        /**
-         * 收藏
-         */
-        public static final String COLLECTION = "/api/v1/collect/agency";
-        /**
-         * 取消收藏
-         */
-        public static final String UNCOLLECTION = "/api/v1/cancel/agency";
-
-    }
-
-
-    /**
-     * ==========================================================================================
-     * ==========================================资讯相关接口================================================
-     * ==========================================================================================
-     */
-    public static class News {
-
-        /**
-         * 资讯Banner
-         */
-        public static final String NEWS_BANNER = "/api/v1/article/banner";
-
-        /**
-         * 资讯tab数据
-         */
-        public static final String NEWS_TAB = "/api/v1/article/type";
-
-        /**
-         * 资讯list数据
-         */
-        public static final String NEWS_LIST = "/api/v1/articles";
-
-        /**
-         * 资讯详情
-         */
-        public static final String NEWS_DETAIL = "/api/v1/article/detail";
-
-        /**
-         * 资讯详情--热门评论
-         */
-        public static final String NEWS_HOTNEWS = "/api/v1/article/hot";
-
-        /**
-         * 资讯详情--评论列表
-         */
-        public static final String NEWS_COMMENTLIST = "/api/v1/article/comment/list";
-
-        /**
-         * 资讯详情--发布评论
-         */
-        public static final String NEWS_COMMENT_SEND = "/api/v1/comment/article";
-
-        /**
-         * 资讯详情--点赞
-         */
-        public static final String NEWS_SUPPPORT = "/api/v1/article/support";
+        public static final String UPLOAD_PIC = "api/attachment";
 
 
     }
 
+    public static class Cat {
+        /**
+         * 设置默认路径
+         */
+        public static final String DEFAULT_FOLDER = "api/folders/default";
+
+        /**
+         * folderMove
+         */
+        public static final String FOLDER_MOVE = "api/folders/move";
+
+        /**
+         * folderMove
+         */
+        public static final String FOLDER_TRASH = "api/note/trash";
+
+        /**
+         * GetFolderNoteIds
+         */
+        public static final String FOLDER_NOTEIDS = "api/folders/note/ids";
+
+        /**
+         * GetFolderNoteIds
+         */
+        public static final String FOLDER = "api/folders";
+
+    }
+
+    public static class Note {
+        /**
+         * 文件
+         */
+        public static final String FOLDER = "api/folders";
+
+        /**
+         * 标签
+         */
+        public static final String TAG = "api/tags";
+        /**
+         * 标签
+         */
+        public static final String TAGLIST = "api/tags";
+        /**
+         * 标签
+         */
+        public static final String ALLNOTESID = "api/note/ids";
+
+        /**
+         * getNote
+         */
+        public static final String NOTE = "api/note";//
+        /**
+         * getTrashNote
+         */
+        public static final String TRASH_NOTE = "api/note/trash/ids";//
+
+        /**
+         * recovery
+         */
+        public static final String RECOVERY_NOTE = "api/note/trash";//
+
+        /**
+         * getNote：
+         * https://s.qingbiji.cn/api/attachment?filename=IMG_20180525_132850.jpg&session_token=7E3ECyCspLM7NXPD6wRbBatBV9SKrX4q89fUxmwf
+         */
+        public static final String UPLOAD_PIC = "api/attachment";//
+
+        /**
+         * 设置默认路径
+         */
+        public static final String DEFAULT_FOLDER = "api/folders/default";
+
+        /**
+         * 设置默认路径
+         */
+        public static final String VERIFY_EMAIL = "api/user/verifyemail";
+
+        /**
+         * noteList
+         */
+        public static final String NOTE_LIST_FOLDERID = "api/folders/note";
+
+        /**
+         * noteList
+         */
+        public static final String NOTE_LIST_TAGID = TAGLIST;
+
+
+    }
 
     /**
-     * ==========================================================================================
-     * ==========================================个人中心相关================================================
-     * ==========================================================================================
+     * 设置相关
      */
-    public static class Mine {
+    public static class Settings {
         /**
-         * 登录
+         * feedBack
          */
-        public static final String LOGIN = "/api/v1/login";
-
-        /**
-         * 微信授权
-         */
-        public static final String WEICHAT_LOG = "/api/v1/wechat/authorization";
-        /**
-         * 验证码（注册）
-         */
-        public static final String REG_CODE = "/api/v1/send/sms";
-        /**
-         * 验证码（忘记密码的修改）
-         */
-        public static final String FORGET_CODE = "/api/v1/send/forget/sms";
-
-        /**
-         * 注册
-         */
-        public static final String REGIST = "/api/v1/user/register";
-        /**
-         * =忘记密码
-         */
-        public static final String FORGET_CHANGE_PS = "/api/v1/save/password";
-        /**
-         * 修改密码=
-         */
-        public static final String CHANGEPS = "/api/v1/reset/password";
-
-        /**
-         * 修改昵称+修改头像
-         */
-        public static final String CHANGENAME_PHOTO = "/api/v1/edit/user";
-
-        /**
-         * 预约参观 列表
-         */
-        public static final String APPOINTVIST_LIST = "/api/v1/user/visit";
-
-        /**
-         * 预约参观 detail
-         */
-        public static final String APPOINTVIST_DETAIL = "/api/v1/visit/detail";
-        /**
-         * 上门评估 列表
-         */
-        public static final String DOORASSESS_LIST = "/api/v1/user/evaluate";
-        /**
-         * 上门评估 详情
-         */
-        public static final String DOORASSESS_DETIAL = "/api/v1/evaluate/detail";
-        /**
-         * 我的评论 列表
-         */
-        public static final String COMMENT_LIST = "/api/v1/user/comment";
-        /**
-         * 我的收藏 列表
-         */
-        public static final String MINE_COLLECT_LIST = "/api/v1/user/collected/agency";
+        public static final String FEEDBACK = "api/feedback";
     }
 
 
