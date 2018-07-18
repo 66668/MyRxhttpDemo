@@ -7,12 +7,11 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.FieldNamingStrategy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.thinkernote.ThinkerNote.General.TNSettings;
-import com.thinkernote.ThinkerNote.Utils.CheckNetworkUtils;
-import com.thinkernote.ThinkerNote.Utils.MLog;
-import com.thinkernote.ThinkerNote.base.Constants;
-import com.thinkernote.ThinkerNote.http.fileprogress.FileProgressInterceptor;
-import com.thinkernote.ThinkerNote.http.fileprogress.FileProgressListener;
+import com.sjy.network.base.Constants;
+import com.sjy.network.http.fileprogress.FileProgressInterceptor;
+import com.sjy.network.http.fileprogress.FileProgressListener;
+import com.sjy.network.util.CheckNetworkUtils;
+import com.sjy.network.util.MLog;
 
 import java.io.File;
 import java.io.IOException;
@@ -299,8 +298,8 @@ public class HttpUtils {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request okhttpRequest = chain.request();
-                    TNSettings settings = TNSettings.getInstance();
-                    String myToken = settings.token;//添加你的token
+
+                    String myToken = "myToken";//添加你的token
 
                     Request.Builder okhttpRequst = okhttpRequest.newBuilder()
                             .addHeader("user-agent", HttpHead.getHeader());
@@ -377,8 +376,7 @@ public class HttpUtils {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request okhttpRequest = chain.request();
-                    TNSettings settings = TNSettings.getInstance();
-                    String myToken = settings.token;//添加你的token
+                    String myToken = "myToken";//添加你的token
 
                     Request.Builder okhttpRequst = okhttpRequest.newBuilder()
                             .addHeader("user-agent", HttpHead.getHeader());
@@ -481,8 +479,7 @@ public class HttpUtils {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request okhttpRequest = chain.request();
-                    TNSettings settings = TNSettings.getInstance();
-                    String myToken = settings.token;//添加你的token
+                    String myToken = "myToken";//添加你的token
 
                     Request.Builder okhttpRequst = okhttpRequest.newBuilder()
                             .addHeader("user-agent", HttpHead.getHeader());

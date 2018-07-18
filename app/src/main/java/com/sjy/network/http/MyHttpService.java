@@ -1,27 +1,27 @@
 package com.sjy.network.http;
 
 
-import com.thinkernote.ThinkerNote.Utils.MLog;
-import com.thinkernote.ThinkerNote.bean.CommonBean;
-import com.thinkernote.ThinkerNote.bean.CommonBean1;
-import com.thinkernote.ThinkerNote.bean.CommonBean2;
-import com.thinkernote.ThinkerNote.bean.CommonBean3;
-import com.thinkernote.ThinkerNote.bean.CommonListBean;
-import com.thinkernote.ThinkerNote.bean.login.LoginBean;
-import com.thinkernote.ThinkerNote.bean.login.ProfileBean;
-import com.thinkernote.ThinkerNote.bean.login.VerifyPicBean;
-import com.thinkernote.ThinkerNote.bean.main.AlipayBean;
-import com.thinkernote.ThinkerNote.bean.main.AllFolderBean;
-import com.thinkernote.ThinkerNote.bean.main.AllNotesIdsBean;
-import com.thinkernote.ThinkerNote.bean.main.GetNoteByNoteIdBean;
-import com.thinkernote.ThinkerNote.bean.main.MainUpgradeBean;
-import com.thinkernote.ThinkerNote.bean.main.NoteListBean;
-import com.thinkernote.ThinkerNote.bean.main.OldNoteAddBean;
-import com.thinkernote.ThinkerNote.bean.main.OldNotePicBean;
-import com.thinkernote.ThinkerNote.bean.main.TagListBean;
-import com.thinkernote.ThinkerNote.bean.main.WxpayBean;
-import com.thinkernote.ThinkerNote.bean.settings.FeedBackBean;
-import com.thinkernote.ThinkerNote.http.fileprogress.FileProgressListener;
+import com.sjy.network.bean.CommonBean;
+import com.sjy.network.bean.CommonBean1;
+import com.sjy.network.bean.CommonBean2;
+import com.sjy.network.bean.CommonBean3;
+import com.sjy.network.bean.CommonListBean;
+import com.sjy.network.bean.LoginBean;
+import com.sjy.network.bean.login.ProfileBean;
+import com.sjy.network.bean.login.VerifyPicBean;
+import com.sjy.network.bean.main.AlipayBean;
+import com.sjy.network.bean.main.AllFolderBean;
+import com.sjy.network.bean.main.AllNotesIdsBean;
+import com.sjy.network.bean.main.GetNoteByNoteIdBean;
+import com.sjy.network.bean.main.MainUpgradeBean;
+import com.sjy.network.bean.main.NoteListBean;
+import com.sjy.network.bean.main.OldNoteAddBean;
+import com.sjy.network.bean.main.OldNotePicBean;
+import com.sjy.network.bean.main.TagListBean;
+import com.sjy.network.bean.main.WxpayBean;
+import com.sjy.network.bean.settings.FeedBackBean;
+import com.sjy.network.http.fileprogress.FileProgressListener;
+import com.sjy.network.util.MLog;
 
 import java.util.List;
 

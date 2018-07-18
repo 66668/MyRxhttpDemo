@@ -6,10 +6,9 @@ import java.io.Serializable;
  * 统一接收数据的bean
  */
 
-public class CommonBean<T> implements Serializable {
+public class CommonBean implements Serializable {
     int code;
-    String message;
-    T result;
+    String msg;
 
     public int getCode() {
         return code;
@@ -20,27 +19,23 @@ public class CommonBean<T> implements Serializable {
     }
 
     public String getMessage() {
-        return message;
+        return msg;
     }
 
     public void setMessage(String message) {
-        this.message = message;
+        this.msg = message;
     }
 
-    public T getResult() {
-        return result;
-    }
-
-    public void setResult(T result) {
-        this.result = result;
+    public CommonBean(int code, String msg) {
+        this.code = code;
+        this.msg = msg;
     }
 
     @Override
     public String toString() {
         return "CommonBean{" +
                 "code=" + code +
-                ", message='" + message + '\'' +
-                ", result=" + result +
+                ", message='" + msg + '\'' +
                 '}';
     }
 }
